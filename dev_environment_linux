@@ -1,0 +1,48 @@
+# install ruby
+# https://github.com/postmodern/ruby-install#readmes
+# https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz
+ruby-install ruby 2.5.1
+
+# configure your ~/.bashrc
+# export PATH="/home/<user>/.rubies/ruby-2.5.1/bin:$PATH"
+
+# install ruby gems
+cd ~
+cd Downloads/
+wget https://rubygems.org/rubygems/rubygems-2.7.7.tgz
+tar xvf rubygems-2.7.7.tgz
+cd rubygems-2.7.7
+sudo ruby setup.rb
+
+# install bundler and rails gem (#https://bundler.io/v1.16/guides/rails.html)
+gem install rails
+gem install bundler
+
+# create a new app
+rails server
+rails new myapp
+cd myapp
+
+# If you want a dependency to be loaded only in a certain Rails environment,
+# place it in a group named after that Rails environment
+# group :test do
+#   gem 'rspec'
+#   gem 'faker'
+# end
+
+# You can place a dependency in multiple groups at once as well
+# group :development, :test do
+#   gem 'wirble'
+#   gem 'ruby-debug'
+# end
+
+# then add your changes to your git repository
+# git add Gemfile Gemfile.lock
+# git commit -m "add dependencies x..n"
+
+# After adding a dependency, if it is not yet installed, install it
+# bundle install
+
+# consider Jekyll for easy liquid,  markdown, etc
+# https://www.sitepoint.com/jekyll-rails/
+
